@@ -70,9 +70,9 @@ cd ..
 git clone https://github.com/${REPO_ORG}/libcstor.git
 cd libcstor || exit 1
 if [ "${BRANCH}" == "develop" ]; then
-  git checkout master
+  git checkout develop
 else
-  git checkout ${BRANCH} || git checkout master
+  git checkout ${BRANCH} || git checkout develop
 fi
 
 sh autogen.sh;
