@@ -25,7 +25,7 @@
   sudo make -j4
   sudo cp *.a /usr/lib
   ```
-* Make sure that you have installed libcstor in the system. Refer [installing libcstor](https://github.com/openebs/libcstor/blob/master/developer-setup.md)
+* Make sure that you have installed libcstor in the system. Refer [installing libcstor](https://github.com/openebs/libcstor/blob/HEAD/developer-setup.md)
 
 * Make sure that you have cloned and build fio(branch fio-3.7) code in the linux system.
   Please use below command for the fio
@@ -78,7 +78,7 @@ make
 ```
 
 * Test your changes
-Integration tests are written in c and c+. Test script is maintained at https://github.com/openebs/libcstor/blob/master/tests/cstor/script/test_uzfs.sh
+Integration tests are written in c and c+. Test script is maintained at https://github.com/openebs/libcstor/blob/HEAD/tests/cstor/script/test_uzfs.sh
 To run the run the integration tests.
 ```sh
 ../libcstor/tests/cstor/script/test_uzfs.sh -T all

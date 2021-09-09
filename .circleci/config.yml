@@ -1,13 +1,8 @@
-version: 2
-jobs:
-  build:
-    branches:
-      only:
-        - zfs-0.7-release
+version: 2.1
 jobs:
   build_tag_0:
     machine: 
-      enabled: true
+      image: ubuntu-1604:202104-01
     environment:
       - CODECOV_TOKEN=04a04811-63ec-4800-b1d6-f741dc7e079a
     working_directory: ~/github.com/openebs/zfs
@@ -58,7 +53,7 @@ jobs:
             bash <(curl -s https://codecov.io/bash)
   build_tag_1:
     machine: 
-      enabled: true
+      image: ubuntu-1604:202104-01
     working_directory: ~/github.com/openebs/zfs
     steps:
       - checkout
@@ -95,7 +90,13 @@ jobs:
             ztest
 workflows:
   version: 2
-  TAGS:
+  build_tag_0:
     jobs:
-      - build_tag_0
-      - build_tag_1
+      - build_tag_0:
+          filters:
+            branches:
+              only: zfs-0.7-release
+      - build_tag_1:
+          filters:
+            branches:
+              only: zfs-0.7-release
